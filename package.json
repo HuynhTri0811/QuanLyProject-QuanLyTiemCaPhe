@@ -1,0 +1,22 @@
+{
+  "name": "quanlyproject-quanlytiemcaphe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuynhTri0811/QuanLyProject-QuanLyTiemCaPhe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HuynhTri0811/QuanLyProject-QuanLyTiemCaPhe/issues"
+  },
+  "homepage": "https://github.com/HuynhTri0811/QuanLyProject-QuanLyTiemCaPhe#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
