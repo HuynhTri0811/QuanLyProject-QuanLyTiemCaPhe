@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-Parser');
+const bodyParser = require('body-parser');
 const path = require('path');
 
 
@@ -15,10 +15,10 @@ const database = require('./models/database.js');
 
 
 // Router
-app.use('/category',require('./routes/category.js'));
-app.use('/size',require('./routes/size.js'));
-app.use('/product',require('./routes/product.js'));
-app.use('/productAndSize',require('./routes/productAndSize.js'));
+app.use('/category',require('./routes/Category.js'));
+app.use('/size',require('./routes/Size.js'));
+app.use('/product',require('./routes/Product.js'));
+app.use('/productAndSize',require('./routes/ProductAndSize.js'));
 
 database.sync().then(function(){
 	app.listen(port);

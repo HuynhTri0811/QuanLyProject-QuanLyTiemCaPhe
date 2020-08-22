@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 const db = require('./database');
-const caterogy = require('./category.js');
+const CATEGORY = require('./category.js');
 
-const Product = db.define('Product',{
+const PRODUCT = db.define('Product',{
   IDProduct : {
     type : Sequelize.INTEGER,
     primaryKey : true,
@@ -23,9 +23,13 @@ const Product = db.define('Product',{
   },
   IDCategory:{
     type : Sequelize.INTEGER,
+  },
+  IsSell :{
+    type : Sequelize.BOOLEAN,
+    defaultValue : true,
   }  
 });
-Product.belongsTo(caterogy,{
+PRODUCT.belongsTo(CATEGORY,{
   foreignKey : 'IDCategory'
 });
-module.exports = Product;
+module.exports = PRODUCT;

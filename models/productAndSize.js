@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 const db = require('./database');
-const product = require('./product.js');
-const size = require('./size.js');
+const PRODUCT = require('./product.js');
+const SIZE = require('./size.js');
 
-const ProductAndSize = db.define('ProductAndSize',{
+const PRODUCT_AND_SIZE = db.define('ProductAndSize',{
   IDProduct : {
     type : Sequelize.INTEGER,
     primaryKey : true,
@@ -19,10 +19,10 @@ const ProductAndSize = db.define('ProductAndSize',{
       allowNull : true,
   }
 });
-ProductAndSize.belongsTo(product,{
+PRODUCT_AND_SIZE.belongsTo(PRODUCT,{
   foreignKey : 'IDProduct'
 });
-ProductAndSize.belongsTo(size,{
+PRODUCT_AND_SIZE.belongsTo(SIZE,{
     foreignKey : 'IDSize'
 });
-module.exports = ProductAndSize;
+module.exports = PRODUCT_AND_SIZE;

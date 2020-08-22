@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('./database');
 
-const Size = db.define('Size',{
+const SIZE = db.define('Size',{
   IDSize : {
     type : Sequelize.INTEGER,
     primaryKey : true,
@@ -14,4 +14,4 @@ const Size = db.define('Size',{
   }
 });
 
-module.exports = Size;
+module.exports = SIZE;

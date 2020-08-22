@@ -2,50 +2,48 @@ const Router = require('express').Router;
 const fs = require('fs');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-const category = require('../models/category.js');
-const Product = require('../models/product.js');
-const Error404 = require('./404Error');
+const CATEGORY = require('../models/category.js');
+const ERROR = require('./Error');
 const router = new Router();
 
 router.get('/',(req,res) => {
-    category.findAll()
+    CATEGORY.findAll()
     .then((result) => res.json(result))
-    .catch((err) => Error404.ERROR_RESPONSE(err,res));
+    .catch((err) => ERROR.ERROR_RESPONSE(err,res,400));
 });
 
-router.post('/create',async (req,res) => {
+router.post('/create',(req,res) => {
     var NameCategory = req.body.NameCategory;
-    await category.create({
+    CATEGORY.create({
         NameCategory 
     })
     .then((result) => res.json(result))
-    .catch((err) => Error404.ERROR_RESPONSE(err,res));
+    .catch((err) => ERROR.ERROR_RESPONSE(err,res,401));
 
 });
 router.delete('/delete/:id',(req,res)=>{
     var IDCategory = Number(req.params.id);
-    category.destroy({
+    CATEGORY.destroy({
         where :{
             IDCategory : IDCategory,
         }
     })
     .then((result) => res.json(result))
-    .catch((err) => Error404.ERROR_RESPONSE(err,res,400));
+    .catch((err) => ERROR.ERROR_RESPONSE(err,res,402));
 });
 
-router.put('/update/:id',async (req,res)=>{
+router.put('/update/:id',(req,res)=>{
     var IDCategory = Number(req.params.id);
     var NameCategory = req.body.NameCategory;
-    category.findOne({
+    CATEGORY.findOne({
         where :{
             IDCategory : IDCategory,
         }
     }).then((result)=>{
-        console.log(result);
         if(result === null){
-            res.json(null);
+            ERROR.ERROR_RESPONSE("CAN'T NOT FIND IDCategory:"+IDCategory,res,404);
         }else{
-            category.update({
+            CATEGORY.update({
                 NameCategory : NameCategory,
                 },{
                     where :{
@@ -53,8 +51,8 @@ router.put('/update/:id',async (req,res)=>{
                     }
                 })
                 .then((result)=>res.json(result))
-                .catch((err) => Error404.ERROR_RESPONSE(err,res,401));
+                .catch((err) => ERROR.ERROR_RESPONSE(err,res,401));
         }
-    }).catch(console.error());
+    }).catch((err) => ERROR.ERROR_RESPONSE(err,res,404));
 });
 module.exports = router;

@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('./database');
 
-const Category = db.define('Category',{
+const CATEGORY = db.define('Category',{
   IDCategory : {
     type : Sequelize.INTEGER,
     primaryKey : true,
@@ -14,4 +14,4 @@ const Category = db.define('Category',{
   }
 });
 
-module.exports = Category;
+module.exports = CATEGORY;
