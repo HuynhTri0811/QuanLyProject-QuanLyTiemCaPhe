@@ -14,6 +14,7 @@ const Store = db.define('Store',{
       allowNull : false,
     },
     URLImageStore :{
+      
       type : Sequelize.STRING ,
       allowNull : true,    
     },
