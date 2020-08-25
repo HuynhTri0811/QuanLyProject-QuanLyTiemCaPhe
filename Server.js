@@ -19,6 +19,7 @@ app.use('/category',require('./routes/Category.js'));
 app.use('/size',require('./routes/Size.js'));
 app.use('/product',require('./routes/Product.js'));
 app.use('/productAndSize',require('./routes/ProductAndSize.js'));
+app.use('/store',require('./routes/Store.js'));
 
 database.sync().then(function(){
 	app.listen(port);

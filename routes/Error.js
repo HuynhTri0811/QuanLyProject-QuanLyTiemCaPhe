@@ -4,11 +4,11 @@
  * @param {*} ERROR_NUMBER 
  */
 /**
- ** 400 : CAN'T NOT GET ALL  
- ** 401 : CAN'T NOT CREATE
- ** 402 : CAN'T NOT DELETE
- ** 403 : CAN'T NOT UPDATE
- ** 404 : CAN'T NOT FIND 
+ ** 400 : Can't not get all  
+ ** 401 : Can't not create
+ ** 402 : Can't not delete
+ ** 403 : Can't not update
+ ** 404 : Can't not find 
  */
 module.exports.ERROR_RESPONSE = function(ERROR,RESPONSE,ERROR_NUMBER){
     if(ERROR_NUMBER === undefined){

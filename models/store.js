@@ -1,8 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('./database');
-const { sequelize } = require('./size');
 
-const Store = db.define('Store',{
+const STORE = db.define('Store',{
     IDStore : {
       type : Sequelize.INTEGER,
       primaryKey : true,
@@ -14,7 +13,6 @@ const Store = db.define('Store',{
       allowNull : false,
     },
     URLImageStore :{
-      
       type : Sequelize.STRING ,
       allowNull : true,    
     },
@@ -34,13 +32,13 @@ const Store = db.define('Store',{
       type : Sequelize.INTEGER,
     },
     IsWifiFree:{
-        type : Sequelize.BOOLEAN,
-        defaultValue : true,
+      type : Sequelize.BOOLEAN,
+      defaultValue : true,
     },
     Payment_By_Card:{
-        type : Sequelize.BOOLEAN,
-        defaultValue : false,
+      type : Sequelize.BOOLEAN,
+      defaultValue : true,
     }
   });
-  module.exports = Product;
+  module.exports = STORE;
   
