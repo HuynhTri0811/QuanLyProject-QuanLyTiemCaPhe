@@ -3,7 +3,7 @@ const fs = require('fs');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const CATEGORY = require('../models/category.js');
-const ERROR = require('./Error');
+const ERROR = require('../method/Error');
 const router = new Router();
 
 router.get('/',(req,res) => {

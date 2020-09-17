@@ -3,7 +3,7 @@ const fs = require('fs');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const SIZE = require('../models/size.js');
-const ERROR = require('./Error.js');
+const ERROR = require('../method/Error.js');
 
 const router = new Router();
 

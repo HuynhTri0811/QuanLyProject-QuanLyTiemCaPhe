@@ -3,7 +3,7 @@ const fs = require('fs');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
-const ERROR = require('./Error.js');
+const ERROR = require('../method/Error.js');
 const STORE = require('../models/store.js');
 
 const router = new Router();
@@ -88,5 +88,7 @@ router.put('/update/:id',(req,res)=>{
     .then((result)=>res.json(result))
     .catch((err)=>ERROR.ERROR_RESPONSE(err,res,401));
 });
+
+
 
 module.exports = router;

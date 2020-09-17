@@ -7,7 +7,7 @@ const PRODUCT_AND_SIZE = require('../models/productAndSize');
 const SIZE = require('../models/size.js');
 const PRODUCT = require('../models/product');
 const CATEGORY = require('../models/category.js');
-const ERROR = require('./Error');
+const ERROR = require('../method/Error');
 
 const router = new Router();
 

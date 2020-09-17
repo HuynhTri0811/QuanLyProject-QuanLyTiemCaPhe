@@ -3,7 +3,7 @@ const fs = require('fs');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
-const ERROR = require('./Error');
+const ERROR = require('../method/Error');
 const STAFF = require('../models/staff');
 const POSITION = require('../models/position');
 const { rootCertificates } = require('tls');

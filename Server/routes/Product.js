@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const PRODUCT = require('../models/product.js');
 const CATEGORY = require('../models/category.js');
-const ERROR =  require('./Error');
+const ERROR =  require('../method/Error');
 
 var router = new Router();
 
