@@ -138,7 +138,7 @@ router.pacth('/update', (req, res) => {
 
         }
     })
-        .catch((err) => ERROR.ERROR_RESPONSE(err, res, 404));
+    .catch((err) => ERROR.ERROR_RESPONSE(err, res, 404));
 });
 
 module.exports = router;

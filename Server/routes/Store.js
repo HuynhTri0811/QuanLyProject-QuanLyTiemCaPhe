@@ -90,5 +90,17 @@ router.put('/update/:id',(req,res)=>{
 });
 
 
+router.get('/:id',(req,res)=>{
+    var IDStore = Number(req.params.id);
+
+    STORE.findOne({
+        where :{
+            IDStore : IDStore
+        }
+    })
+    .then((result)=>res.json(result))
+    .catch((err)=>ERROR.ERROR_RESPONSE(err,res,404));
+});
+
 
 module.exports = router;
